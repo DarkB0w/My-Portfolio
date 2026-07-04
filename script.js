@@ -1,4 +1,4 @@
-// Smooth scrolling için
+// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -12,50 +12,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll efekti
-let lastScrollTop = 0;
+// Navbar scroll effect (Glassmorphism adjustments)
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    
-    if (scrollTop > 100) {
-        if (isDarkMode) {
-            navbar.style.background = 'rgba(30, 30, 30, 0.95)';
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.5)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.15)';
-        }
+
+    if (scrollTop > 50) {
+        navbar.style.background = 'rgba(5, 5, 5, 0.95)';
+        navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+        navbar.style.padding = '0.5rem 0'; // Shrink slighty
     } else {
-        if (isDarkMode) {
-            navbar.style.background = 'rgba(30, 30, 30, 0.98)';
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.5)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-        }
+        navbar.style.background = 'rgba(5, 5, 5, 0.8)';
+        navbar.style.boxShadow = 'none';
+        navbar.style.padding = '1rem 0';
     }
-    
-    lastScrollTop = scrollTop;
 });
 
-// Aktif bölüm belirleme
+// Active section highlighter
 const sections = document.querySelectorAll('.section');
 const navLinks = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
     let current = '';
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 100) {
+        if (pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
-    
+
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
@@ -64,12 +52,11 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Galeri resimleri için lightbox efekti (opsiyonel)
+// Lightbox for Gallery (Simple)
 document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
         const img = this.querySelector('img');
         if (img) {
-            // Basit bir görüntüleme - dilerseniz daha gelişmiş lightbox kütüphanesi ekleyebilirsiniz
             const overlay = document.createElement('div');
             overlay.style.cssText = `
                 position: fixed;
@@ -77,24 +64,28 @@ document.querySelectorAll('.gallery-item').forEach(item => {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba(0, 0, 0, 0.9);
+                background: rgba(0, 0, 0, 0.95);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 z-index: 9999;
                 cursor: pointer;
+                backdrop-filter: blur(5px);
+                animation: fadeIn 0.3s ease;
             `;
-            
+
             const imgClone = img.cloneNode();
             imgClone.style.cssText = `
                 max-width: 90%;
                 max-height: 90%;
                 object-fit: contain;
+                box-shadow: 0 0 50px rgba(157, 78, 221, 0.2);
+                border-radius: 8px;
             `;
-            
+
             overlay.appendChild(imgClone);
             document.body.appendChild(overlay);
-            
+
             overlay.addEventListener('click', () => {
                 overlay.remove();
             });
@@ -102,37 +93,14 @@ document.querySelectorAll('.gallery-item').forEach(item => {
     });
 });
 
-// Sayfa yüklendiğinde animasyonlar
+// Intro Animation trigger
 window.addEventListener('load', () => {
-    // Tüm section'ları görünür yap
-    sections.forEach((section, index) => {
-        setTimeout(() => {
-            section.style.opacity = '1';
-        }, index * 100);
-    });
-});
-
-// Dark Mode Toggle
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-
-// Navbar rengini güncelle
-function updateNavbarColor() {
-    const isDarkMode = body.classList.contains('dark-mode');
-    if (isDarkMode) {
-        navbar.style.background = 'rgba(30, 30, 30, 0.98)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.5)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        heroTitle.style.opacity = '1';
+        heroTitle.style.transform = 'translateY(0)';
     }
-}
-
-// Sayfa yüklendiğinde tema tercihini kontrol et
-if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
-    updateNavbarColor();
-}
+});
 
 // Language Toggle
 let currentLang = localStorage.getItem('language') || 'tr';
@@ -140,54 +108,37 @@ let currentLang = localStorage.getItem('language') || 'tr';
 function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('language', lang);
-    
-    // Tüm data-i18n elementlerini güncelle
+
+    // Update data-i18n elements
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
+            // Check if it's an input placeholder or text content
+            if (element.placeholder) {
+                element.placeholder = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
         }
     });
-    
-    // aria-label'ları güncelle
-    document.querySelectorAll('[data-i18n-aria]').forEach(element => {
-        const key = element.getAttribute('data-i18n-aria');
-        if (translations[lang] && translations[lang][key]) {
-            element.setAttribute('aria-label', translations[lang][key]);
-        }
-    });
-    
-    // HTML lang attribute'unu güncelle
+
+    // Update Toggle Button Text
+    const langToggleBtn = document.querySelector('.lang-text');
+    // Note: In new HTML, the button content might be direct text, so logic might need adjustment if class structure changed.
+    // Based on previous HTML, it was a span. In translations.js nav.langToggle is 'TR' or 'EN'.
+
+    // HTML lang attribute
     document.documentElement.lang = lang;
 }
 
-// Sayfa yüklendiğinde dil ayarını uygula
 document.addEventListener('DOMContentLoaded', () => {
     setLanguage(currentLang);
 });
 
-// Dil değiştirme butonu
 const langToggle = document.getElementById('lang-toggle');
 if (langToggle) {
     langToggle.addEventListener('click', () => {
         const newLang = currentLang === 'tr' ? 'en' : 'tr';
         setLanguage(newLang);
-    });
-}
-
-// Tema değiştirme butonu
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        
-        // Navbar rengini güncelle
-        updateNavbarColor();
-        
-        // Tema tercihini kaydet
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
-        }
     });
 }

@@ -3,133 +3,144 @@ const translations = {
         // Navbar
         'nav.home': 'Anasayfa',
         'nav.about': 'Hakkımda',
-        'nav.drawings': 'Çizimlerim',
-        'nav.models': 'Modellerim',
+        'nav.models': 'Modellemelerim',
         'nav.projects': 'Projelerim',
         'nav.contact': 'İletişim',
-        'nav.backToHome': 'Ana Sayfaya Dön',
-        'nav.themeToggle': 'Tema Değiştir',
-        'nav.langToggle': 'Dil: Türkçe',
-        
+        'nav.langToggle': 'EN',
+
         // Hero Section
-        'hero.title': 'Merhaba, Ben Ensar',
-        'hero.subtitle': 'Bağımsız Geliştirici ',
-        'hero.cta': 'Projelerimi Keşfet',
-        
+        'hero.title': 'Merhaba, Ben Ensar Karayay',
+        'hero.subtitle': 'Teknik Artist & Oyun Geliştiricisi',
+        'hero.cta': 'Hakkımda', // Directs to bio like reference
+
         // About Section
         'about.title': 'Hakkımda',
-        'about.text1': 'Merhaba! Ben Ensar, tasarım ve teknoloji tutkunu bir geliştiriciyim.',
-        'about.text2': 'Hem 3B alanda hem 2B alanda çalışmayı severim. Modelleme yapmayı, kod yazmayı ve yeni projeler geliştirmeyi seviyorum.',
-        'about.text3': 'Her zaman yeni şeyler öğrenmeye açığım ve yaratıcı projelerde yer almak için sabırsızlanıyorum',
-        
-    
+        'about.text1': 'Ben Ensar Karayay, Dijital Oyun Tasarımı 2. Sınıf öğrencisiyim.',
+        'about.text2': 'Modelleme, C#, Game Developer ve Unity, Unreal gibi oyun motorlarını kullanarak oyun yapıyorum.',
+        'about.text3': 'Şu ana kadar çıkmış bir oyunum var ve devamı da çıkacak.',
+
+        // Internal Links in About
+        'about.linkModels': 'Modellemelerim',
+        'about.linkProjects': 'Projelerim',
+
         // Models Section
-        'models.title': 'Modellerim',
-        'models.overlay1': 'Oyunlara eklenmeye uyumlu bir Savaş Baltası!',
-        'models.overlay2': 'Basaban oyunumuza ait bir Fötr şapka modeli',
-        'models.overlay3': 'Yaptığım ilk profesyonel Model',
-        'models.overlay4': 'Basaban oyunumuza ait bir Shuriken şapka modeli',
-        'models.overlay5': 'Konserve adam modeli (Riglenmiş bir model).',
-        'models.overlay6': 'Basaban oyunumuza ait bir ağaç modeli!',
-        'models.overlay7': 'Basaban oyunumuza ait bir farklı renkte Fötr şapka modeli!',
-        'models.overlay8': 'Basaban oyunumuza ait bir asker bereti modeli!',
-        'models.overlay9': 'Basaban oyunumuza ait bir Kep Şapka modeli!',
-        'models.overlay10': 'Basaban oyunumuza ait bir Çalı modeli!',
+        'models.title': 'Modellemelerim',
+        'models.overlay1': 'Savaş Baltası',
+        'models.overlay2': 'Fötr Şapka',
+        'models.overlay3': 'İlk Profesyonel Model',
+        'models.overlay4': 'Shuriken Şapka',
+        'models.overlay5': 'Konserve Adam (Rigli)',
+        'models.overlay6': 'Stilize Ağaç',
+        'models.overlay7': 'Fötr Şapka (Varyasyon)',
+        'models.overlay8': 'Askeri Bere',
+        'models.overlay9': 'Kep',
+        'models.overlay10': 'Çalı',
 
         // Projects Section
         'projects.title': 'Projelerim',
         'projects.name': 'Basaban',
-        'projects.platform': 'Platform: Android',
-        'projects.description': '3B Bir Puzzle Oyunu',
-        'projects.button': 'DAHA FAZLA BİLGİ',
-        
+        'projects.platform': 'Mobil Platform',
+        'projects.description': 'Ekibimle birlikte geliştirdiğimiz ve mobil platformda yayınladığımız 3B bulmaca oyunu.',
+        'projects.button': 'Play Store\'da Gör',
+
+        // Coming Soon
+        'projects.soonName': 'Yeni Projeler',
+        'projects.soonDesc': 'Yeni projeler üzerinde çalışıyorum. Takipte kalın!',
+        'projects.soonBtn': 'Yakında',
+
         // Contact Section
         'contact.title': 'İletişim',
-        'contact.text': 'Benimle iletişime geçmek isterseniz:',
+        'contact.text': 'Bana ulaşın:',
         'contact.email': 'E-posta:',
         'contact.social': 'Sosyal Medya:',
-        
+
         // Footer
         'footer.copyright': 'Tüm hakları saklıdır.',
-        
-        // Project Detail Page
-        'detail.aboutProject': 'Proje Hakkında',
-        'detail.description': '3B bir puzzle oyunudur. Oyuncu, zorlu bulmacaları çözerek ilerler ve yeni seviyelerin kilidini açar. Oynanış Seviyelerdeki kutuları aynı renkteki piyonlara itmeye çalışır.',
+
+        // Project Detail Page - Keeping generic as it's less focus now
+        'detail.aboutProject': 'Oyun Hakkında',
+        'detail.description': 'Basaban, 3B bir bulmaca oyunudur.',
         'detail.features': 'Özellikler',
-        'detail.feature1': 'İlk projem!',
-        'detail.feature2': '45+ Benzersiz Seviye - Her seviye farklı bir mücadele!',
-        'detail.feature3': 'Özelleştirme Sistemi - Karakterinizin tacını özelleştirin ve tarzınızı yansıtın!',
-        'detail.feature4': 'Otomatik Kaydetme - İlerlemeniz her zaman güvende!',
-        'detail.technologies': 'Kullanılan Teknolojiler',
-        'detail.gallery': 'Proje Görselleri',
-        'detail.googlePlay': "Google Play'de İncele",
-        'detail.googlePlayDownload': "Google Play'den İndir",
-        'detail.backToProjects': '← Projelere Geri Dön'
+        'detail.feature1': '45+ Bölüm',
+        'detail.feature2': 'Stratejik Oynanış',
+        'detail.feature3': 'Karakter Özelleştirme',
+        'detail.feature4': 'Bulut Kayıt',
+        'detail.technologies': 'Teknolojiler',
+        'detail.gallery': 'Görseller',
+        'detail.googlePlay': 'Google Play',
+        'detail.googlePlayDownload': 'İndir',
+        'detail.backToProjects': 'Geri Dön'
     },
     en: {
         // Navbar
         'nav.home': 'Home',
         'nav.about': 'About',
-        'nav.models': 'Models',
-        'nav.projects': 'Projects',
+        'nav.models': 'My Models',
+        'nav.projects': 'My Projects',
         'nav.contact': 'Contact',
-        'nav.backToHome': 'Back to Home',
-        'nav.themeToggle': 'Toggle Theme',
-        'nav.langToggle': 'Language: English',
-        
+        'nav.langToggle': 'TR',
+
         // Hero Section
-        'hero.title': 'Hello, I\'m Ensar',
-        'hero.subtitle': 'Indie Developer',
-        'hero.cta': 'Explore My Projects',
-        
+        'hero.title': 'Hello, I am Ensar Karayay',
+        'hero.subtitle': 'Technical Artist & Game Developer',
+        'hero.cta': 'About Me',
+
         // About Section
         'about.title': 'About Me',
-        'about.text1': 'Hello! I\'m Ensar, a developer passionate about design and technology.',
-        'about.text2': 'I enjoy working in both 3D and 2D fields. I love modeling, coding, and developing new projects.',
-        'about.text3': 'I am always eager to learn new things and excited to be part of creative projects.',
-       
-        
+        'about.text1': 'I am Ensar Karayay, a 2nd Year Digital Game Design Student.',
+        'about.text2': 'I create games using Modeling, C#, Game Development tools, Unity, and Unreal Engine.',
+        'about.text3': 'I have one released game so far, and more are coming.',
+
+        // Internal Links in About
+        'about.linkModels': 'My Models',
+        'about.linkProjects': 'My Projects',
+
         // Models Section
         'models.title': 'My Models',
-        'models.overlay1': 'A Battle Axe compatible to be added to games!',
-        'models.overlay2': 'A Fedora hat model for our game Basaban',
-        'models.overlay3': 'My first professional Model',
-        'models.overlay4': 'A Shuriken hat model for our game Basaban',
-        'models.overlay5': 'Bad canned model (A rigged model).',
-        'models.overlay6': 'A tree model for our game Basaban!',
-        'models.overlay7': 'A Fedora hat model in a different color for our game Basaban!',
-        'models.overlay8': 'A military beret model for our game Basaban!',
-        'models.overlay9': 'A Cap hat model for our game Basaban!',
-        'models.overlay10': 'A Bush model for our game Basaban!',
-        
+        'models.overlay1': 'Battle Axe',
+        'models.overlay2': 'Fedora Hat',
+        'models.overlay3': 'First Professional Model',
+        'models.overlay4': 'Shuriken Hat',
+        'models.overlay5': 'Tin Man (Rigged)',
+        'models.overlay6': 'Stylized Tree',
+        'models.overlay7': 'Fedora Hat (Variation)',
+        'models.overlay8': 'Military Beret',
+        'models.overlay9': 'Cap',
+        'models.overlay10': 'Bush',
+
         // Projects Section
         'projects.title': 'My Projects',
         'projects.name': 'Basaban',
-        'projects.platform': 'Platform: Android',
-        'projects.description': 'A 3D Puzzle Game',
-        'projects.button': 'MORE INFO',
-        
+        'projects.platform': 'Mobile Platform',
+        'projects.description': 'A 3D puzzle game developed with my team and published on mobile platforms.',
+        'projects.button': 'View on Play Store',
+
+        // Coming Soon
+        'projects.soonName': 'Coming Soon',
+        'projects.soonDesc': 'Working on new projects. Stay tuned!',
+        'projects.soonBtn': 'Soon',
+
         // Contact Section
         'contact.title': 'Contact',
-        'contact.text': 'If you would like to get in touch with me:',
+        'contact.text': 'Contact me:',
         'contact.email': 'Email:',
         'contact.social': 'Social Media:',
-        
+
         // Footer
         'footer.copyright': 'All rights reserved.',
-        
+
         // Project Detail Page
-        'detail.aboutProject': 'About Project',
-        'detail.description': 'A 3D puzzle game. Players progress by solving challenging puzzles and unlock new levels. The gameplay involves pushing boxes to pawns of the same color.',
+        'detail.aboutProject': 'About Game',
+        'detail.description': 'Basaban is a 3D puzzle game.',
         'detail.features': 'Features',
-        'detail.feature1': 'My first project!',
-        'detail.feature2': '45+ Unique Levels - Each level offers a different challenge!',
-        'detail.feature3': 'Customization System - Customize your character\'s crown and reflect your style!',
-        'detail.feature4': 'Auto Save - Your progress is always safe!',
-        'detail.technologies': 'Technologies Used',
-        'detail.gallery': 'Project Gallery',
-        'detail.googlePlay': 'View on Google Play',
-        'detail.googlePlayDownload': 'Download from Google Play',
-        'detail.backToProjects': '← Back to Projects'
+        'detail.feature1': '45+ Levels',
+        'detail.feature2': 'Strategic Gameplay',
+        'detail.feature3': 'Character Customization',
+        'detail.feature4': 'Cloud Save',
+        'detail.technologies': 'Technologies',
+        'detail.gallery': 'Screenshots',
+        'detail.googlePlay': 'Google Play',
+        'detail.googlePlayDownload': 'Download',
+        'detail.backToProjects': 'Back'
     }
 };
