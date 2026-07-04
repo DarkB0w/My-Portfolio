@@ -5,7 +5,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({
-                behavior: 'smooth',
+                behavior: 'auto',
                 block: 'start'
             });
         }
@@ -19,12 +19,12 @@ window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > 50) {
-        navbar.style.background = 'rgba(5, 5, 5, 0.95)';
-        navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+        navbar.style.background = 'rgba(27, 29, 30, 0.98)';
+        navbar.style.borderBottom = '1px solid rgba(154, 132, 95, 0.22)';
         navbar.style.padding = '0.5rem 0'; // Shrink slighty
     } else {
-        navbar.style.background = 'rgba(5, 5, 5, 0.8)';
-        navbar.style.boxShadow = 'none';
+        navbar.style.background = 'rgba(27, 29, 30, 0.92)';
+        navbar.style.borderBottom = '1px solid rgba(154, 132, 95, 0.14)';
         navbar.style.padding = '1rem 0';
     }
 });
@@ -79,8 +79,7 @@ document.querySelectorAll('.gallery-item').forEach(item => {
                 max-width: 90%;
                 max-height: 90%;
                 object-fit: contain;
-                box-shadow: 0 0 50px rgba(157, 78, 221, 0.2);
-                border-radius: 8px;
+                border-radius: 12px 0 12px 0;
             `;
 
             overlay.appendChild(imgClone);
