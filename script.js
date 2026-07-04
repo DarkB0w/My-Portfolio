@@ -120,6 +120,8 @@ const langToggle = document.getElementById('lang-toggle');
 const statusPanel = document.querySelector('.status-panel');
 const navLinks = Array.from(document.querySelectorAll('.nav-link'));
 const sections = Array.from(document.querySelectorAll('section[id]'));
+const modelImages = Array.from(document.querySelectorAll('.models-grid .media-frame img'));
+let lightboxElements = null;
 const themeIcon = {
     dark: `
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -234,6 +236,102 @@ function initAnchorScrolling() {
     });
 }
 
+function ensureLightbox() {
+    if (lightboxElements) {
+        return lightboxElements;
+    }
+
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox';
+    overlay.setAttribute('aria-hidden', 'true');
+
+    overlay.innerHTML = `
+        <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Model görseli">
+            <div class="lightbox-caption">
+                <span class="lightbox-title"></span>
+                <button type="button" class="lightbox-close" aria-label="Kapat">X</button>
+            </div>
+            <div class="lightbox-image-wrap">
+                <img class="lightbox-image" alt="">
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const title = overlay.querySelector('.lightbox-title');
+    const image = overlay.querySelector('.lightbox-image');
+    const closeButton = overlay.querySelector('.lightbox-close');
+
+    const closeLightbox = () => {
+        overlay.classList.remove('is-open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('has-lightbox-open');
+    };
+
+    overlay.addEventListener('click', (event) => {
+        if (event.target === overlay) {
+            closeLightbox();
+        }
+    });
+
+    closeButton.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && overlay.classList.contains('is-open')) {
+            closeLightbox();
+        }
+    });
+
+    lightboxElements = {
+        overlay,
+        image,
+        title,
+        open(sourceImage) {
+            const caption = sourceImage.alt || sourceImage.closest('.media-card')?.querySelector('h3')?.textContent || 'Model görseli';
+            image.src = sourceImage.src;
+            image.alt = caption;
+            title.textContent = caption;
+            overlay.classList.add('is-open');
+            overlay.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('has-lightbox-open');
+            closeButton.focus();
+        }
+    };
+
+    return lightboxElements;
+}
+
+function initModelLightbox() {
+    if (!modelImages.length) {
+        return;
+    }
+
+    const lightbox = ensureLightbox();
+
+    modelImages.forEach((image) => {
+        const frame = image.closest('.media-frame');
+        if (!frame) {
+            return;
+        }
+
+        frame.classList.add('is-zoomable');
+        frame.setAttribute('role', 'button');
+        frame.setAttribute('tabindex', '0');
+        frame.setAttribute('aria-label', `${image.alt} görselini büyüt`);
+
+        const openFromImage = () => lightbox.open(image);
+
+        frame.addEventListener('click', openFromImage);
+        frame.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openFromImage();
+            }
+        });
+    });
+}
+
 function applyStickyStatusPanel() {
     if (!statusPanel) {
         return;
@@ -276,6 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initControls();
     initAnchorScrolling();
     initSectionTracking();
+    initModelLightbox();
 });
 
 window.addEventListener('resize', applyStickyStatusPanel);
