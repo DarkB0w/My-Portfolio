@@ -669,21 +669,88 @@ button {
 
 @media (max-width: 720px) {
     :root {
-        --header-offset: 132px;
+        --header-offset: 0px;
+    }
+
+    body {
+        padding-top: 0;
+    }
+
+    .site-header {
+        position: static;
     }
 
     .container {
-        width: min(calc(100% - 22px), var(--max-width));
+        width: min(calc(100% - 16px), var(--max-width));
     }
 
-    .nav-links {
-        order: 3;
-        width: 100%;
-        justify-content: flex-start;
+    .section {
+        scroll-margin-top: 12px;
+        padding: 22px 0 6px;
+    }
+
+    .hero-section {
+        padding-top: 14px;
+    }
+
+    .section-head {
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .section-head h2 {
+        font-size: clamp(1.85rem, 9vw, 2.7rem);
+    }
+
+    .section-subtitle {
+        max-width: 42ch;
+    }
+
+    .hero-grid,
+    .project-card,
+    .contact-grid,
+    .models-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+        gap: 16px;
+    }
+
+    .header-inner {
+        min-height: 60px;
+        padding-block: 8px;
+        gap: 10px;
+    }
+
+    .brand {
+        gap: 10px;
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .brand-copy strong {
+        font-size: 0.88rem;
+    }
+
+    .brand-copy small {
+        font-size: 0.7rem;
+        line-height: 1.2;
     }
 
     .header-actions {
-        margin-left: auto;
+        gap: 8px;
+    }
+
+    .chip-button,
+    .icon-button {
+        min-height: 36px;
+        min-width: 36px;
+        padding: 0 10px;
     }
 
     .hero-copy,
@@ -695,14 +762,66 @@ button {
         padding: 18px;
     }
 
-    .button-row,
+    .hero-copy h1 {
+        font-size: clamp(1.9rem, 8vw, 2.55rem);
+        max-width: none;
+    }
+
+    .lead {
+        margin-top: 12px;
+        max-width: none;
+        font-size: 0.95rem;
+    }
+
+    .button {
+        min-height: 44px;
+        padding: 0 18px;
+    }
+
+    .button-row {
+        margin-top: 16px;
+    }
+
     .tag-row {
         gap: 10px;
     }
 
+    .status-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 12px 14px;
+    }
+
+    .status-card strong {
+        text-align: left;
+    }
+
     .media-copy h3,
     .project-copy h3 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+
+    .project-card {
+        gap: 16px;
+    }
+
+    .media-frame img,
+    .project-frame img {
+        aspect-ratio: 16 / 10;
+    }
+
+    .media-copy,
+    .project-copy {
+        gap: 8px;
+    }
+
+    .media-index {
+        font-size: 0.76rem;
+    }
+
+    .contact-card strong {
+        font-size: 0.95rem;
     }
 }
 
