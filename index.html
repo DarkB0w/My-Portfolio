@@ -1,149 +1,286 @@
 <!DOCTYPE html>
-<html lang="tr">
-
+<html lang="tr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ensar Karayay | Portfolyo</title>
+    <title>Ensar (DarkB0w) | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=VT323&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="translations.js"></script>
 </head>
-
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Ensar<span>Karayay</span></div>
-            <ul class="nav-menu">
-                <li><a href="#anasayfa" class="nav-link" data-i18n="nav.home">Anasayfa</a></li>
-                <li><a href="#hakkimda" class="nav-link" data-i18n="nav.about">Hakkımda</a></li>
-                <li><a href="#modellerim" class="nav-link" data-i18n="nav.models">Modellerim</a></li>
-                <li><a href="#projelerim" class="nav-link" data-i18n="nav.projects">Projelerim</a></li>
-            </ul>
-            <button id="lang-toggle" class="lang-toggle">
-                <span class="lang-text" data-i18n="nav.langToggle">EN</span>
-            </button>
-        </div>
-    </nav>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#home" aria-label="Ensar DarkB0w">
+                <span class="brand-mark">DBW</span>
+                <span class="brand-copy">
+                    <strong>Ensar (DarkB0w)</strong>
+                    <small data-i18n="brand.subtitle">Bağımsız Geliştirici & 3B/2B Modelleyici</small>
+                </span>
+            </a>
 
-    <!-- Hero / Intro -->
-    <section id="anasayfa" class="section hero-section">
-        <div class="container hero-container">
-            <h1 class="hero-name" data-i18n="hero.title">Merhaba, Ben Ensar Karayay</h1>
-            <p class="hero-sub" data-i18n="hero.subtitle">Teknik Artist & Oyun Geliştiricisi</p>
-            <div class="hero-contact">
-                <a href="mailto:ensarkarayay0758@gmail.com" class="hero-email">ensarkarayay0758@gmail.com</a>
-            </div>
-            <a href="#hakkimda" class="cta-button" data-i18n="hero.cta">Hakkımda</a>
-        </div>
-    </section>
+            <nav class="nav-links" aria-label="Ana navigasyon">
+                <a href="#about" class="nav-link" data-i18n="nav.about">Hakkımda</a>
+                <a href="#models" class="nav-link" data-i18n="nav.models">Modellerim</a>
+                <a href="#projects" class="nav-link" data-i18n="nav.projects">Projelerim</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">İletişim</a>
+            </nav>
 
-    <!-- Hakkımda & Quick Links -->
-    <section id="hakkimda" class="section about-section">
-        <div class="container">
-            <h2 class="section-title" data-i18n="about.title">Hakkımda</h2>
-            <div class="about-content">
-                <p data-i18n="about.text1">Ben Ensar Karayay, Dijital Oyun Tasarımı 2. Sınıf öğrencisiyim.</p>
-                <p data-i18n="about.text2">Modelleme, C#, Game Developer ve Unity, Unreal gibi oyun motorlarını
-                    kullanarak oyun yapıyorum.</p>
-                <p data-i18n="about.text3">Şu ana kadar çıkmış bir oyunum var ve devamı da çıkacak.</p>
-
-                <div class="quick-links">
-                    <a href="#modellerim" class="quick-link-btn" data-i18n="about.linkModels">Modellemelerim</a>
-                    <a href="#projelerim" class="quick-link-btn" data-i18n="about.linkProjects">Projelerim</a>
-                </div>
+            <div class="header-actions">
+                <button id="lang-toggle" class="chip-button" type="button" aria-label="Dil değiştir">EN</button>
+                <button id="theme-toggle" class="icon-button" type="button" aria-label="Tema değiştir"></button>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Modellerim -->
-    <section id="modellerim" class="section model-section">
-        <div class="container">
-            <h2 class="section-title" data-i18n="models.title">Modellemelerim</h2>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="images/Model1.png" alt="Model 1">
-                    <div class="gallery-overlay">
-                        <h3 data-i18n="models.overlay1">Savaş Baltası</h3>
+    <main>
+        <section id="home" class="section hero-section">
+            <div class="container hero-grid">
+                <div class="panel hero-copy">
+                    <p class="eyebrow" data-i18n="hero.kicker">PORTFOLYO / SEÇİLİ ÇALIŞMALAR</p>
+                    <h1 data-i18n="hero.title">Ensar (DarkB0w) - Bağımsız Geliştirici & 3B/2B Modelleyici</h1>
+                    <p class="lead" data-i18n="hero.copy">
+                        Merhaba! Ben Ensar, modelleme ve yazılım tutkunu bir geliştiriciyim. Hem 3B hem 2B alanda çalışmayı, kod yazmayı ve yeni projeler geliştirmeyi seviyorum.
+                    </p>
+
+                    <div class="button-row">
+                        <a class="button primary" href="#projects" data-i18n="hero.primary">Projeleri İncele</a>
+                        <a class="button secondary" href="#contact" data-i18n="hero.secondary">İletişime Geç</a>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/Model2.png" alt="Model 2">
-                    <div class="gallery-overlay">
-                        <h3 data-i18n="models.overlay2">Fötr Şapka</h3>
+
+                <aside class="panel status-panel">
+                    <div class="status-card">
+                        <span data-i18n="status.focusLabel">Odak</span>
+                        <strong data-i18n="status.focusValue">Yazılım + 3B</strong>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Model3.png" alt="Model 3">
-                    <div class="gallery-overlay">
-                        <h3 data-i18n="models.overlay3">İlk Model</h3>
+                    <div class="status-card">
+                        <span data-i18n="status.codeLabel">Kod</span>
+                        <strong data-i18n="status.codeValue">C#, C++, Blueprint</strong>
                     </div>
-                </div>
-                <!-- Adding more items to fill grid -->
-                <div class="gallery-item">
-                    <img src="images/Model4.png" alt="Model 4">
-                    <div class="gallery-overlay">
-                        <h3 data-i18n="models.overlay4">Shuriken Şapka</h3>
+                    <div class="status-card">
+                        <span data-i18n="status.engineLabel">Motorlar</span>
+                        <strong data-i18n="status.engineValue">Unreal, Unity</strong>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Model5.png" alt="Model 5">
-                    <div class="gallery-overlay">
-                        <h3 data-i18n="models.overlay5">Konserve Adam</h3>
+                    <div class="status-card">
+                        <span data-i18n="status.toolsLabel">Araçlar</span>
+                        <strong data-i18n="status.toolsValue">Blender, Substance</strong>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Model6.png" alt="Model 6">
-                    <div class="gallery-overlay">
-                        <h3 data-i18n="models.overlay6">Ağaç</h3>
+                    <div class="status-card">
+                        <span data-i18n="status.langLabel">Dil</span>
+                        <strong>TR / EN</strong>
                     </div>
-                </div>
+                    <p class="status-note" data-i18n="hero.note">
+                        Kısa, net ve karakterli bir portfolyo arayüzü.
+                    </p>
+                </aside>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projelerim -->
-    <section id="projelerim" class="section project-section">
-        <div class="container">
-            <h2 class="section-title" data-i18n="projects.title">Projelerim</h2>
-
-            <!-- Basaban -->
-            <div class="project-block">
-                <h3 class="project-header" data-i18n="projects.name">Basaban</h3>
-                <p class="project-desc" data-i18n="projects.description">Ekibimle geliştirdiğim oyun.</p>
-                <div class="project-actions">
-                    <a href="https://play.google.com/store/apps/details?id=com.Order66Studios.Basaban&hl=tr"
-                        target="_blank" class="store-button" data-i18n="projects.button">Play Store'da Gör</a>
-                </div>
+        <section id="about" class="section content-section">
+            <div class="container section-head">
+                <p class="eyebrow" data-i18n="about.kicker">01 / HAKKIMDA</p>
+                <h2 data-i18n="about.title">Hakkımda</h2>
             </div>
 
-            <!-- Coming Soon -->
-            <div class="project-block coming-soon-block">
-                <h3 class="project-header" data-i18n="projects.soonName">Yeni Proje</h3>
-                <p class="project-desc" data-i18n="projects.soonDesc">Yakında...</p>
-                <div class="project-actions">
-                    <span class="store-button disabled" data-i18n="projects.soonBtn">Yakında</span>
-                </div>
+            <div class="container">
+                <article class="panel text-panel">
+                    <p data-i18n="about.copy">
+                        Merhaba! Ben Ensar, modelleme ve yazılım tutkunu bir geliştiriciyim. Hem 3B hem 2B alanda çalışmayı, kod yazmayı ve yeni projeler geliştirmeyi seviyorum.
+                    </p>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Ensar Karayay. <span data-i18n="footer.copyright">Tüm hakları saklıdır.</span></p>
-        <div class="social-links-footer">
-            <a href="https://x.com/Dark__0758" target="_blank">Twitter</a>
-            <a href="https://www.instagram.com/ensarkryy_/" target="_blank">Instagram</a>
-            <a href="https://github.com/DarkB0w" target="_blank">GitHub</a>
+        <section id="models" class="section content-section">
+            <div class="container section-head">
+                <p class="eyebrow" data-i18n="models.kicker">02 / MODELLER</p>
+                <h2 data-i18n="models.title">Modellerim</h2>
+                <p class="section-subtitle" data-i18n="models.subtitle">3B çalışmalarımı mekanik bir panel düzeniyle sergiliyorum.</p>
+            </div>
+
+            <div class="container card-grid models-grid">
+                <article class="panel media-card">
+                    <div class="media-frame">
+                        <img src="images/Model1.png" alt="Savaş Baltası">
+                    </div>
+                    <div class="media-copy">
+                        <span class="media-index">01</span>
+                        <h3 data-i18n="models.item1">Savaş Baltası</h3>
+                        <p data-i18n="models.tag">3B Model</p>
+                    </div>
+                </article>
+
+                <article class="panel media-card">
+                    <div class="media-frame">
+                        <img src="images/Model2.png" alt="Fötr Şapka">
+                    </div>
+                    <div class="media-copy">
+                        <span class="media-index">02</span>
+                        <h3 data-i18n="models.item2">Fötr Şapka</h3>
+                        <p data-i18n="models.tag">3B Model</p>
+                    </div>
+                </article>
+
+                <article class="panel media-card">
+                    <div class="media-frame">
+                        <img src="images/Model3.png" alt="İlk Model">
+                    </div>
+                    <div class="media-copy">
+                        <span class="media-index">03</span>
+                        <h3 data-i18n="models.item3">İlk Model</h3>
+                        <p data-i18n="models.tag">3B Model</p>
+                    </div>
+                </article>
+
+                <article class="panel media-card">
+                    <div class="media-frame">
+                        <img src="images/Model4.png" alt="Shuriken Şapka">
+                    </div>
+                    <div class="media-copy">
+                        <span class="media-index">04</span>
+                        <h3 data-i18n="models.item4">Shuriken Şapka</h3>
+                        <p data-i18n="models.tag">3B Model</p>
+                    </div>
+                </article>
+
+                <article class="panel media-card">
+                    <div class="media-frame">
+                        <img src="images/Model5.png" alt="Konserve Adam">
+                    </div>
+                    <div class="media-copy">
+                        <span class="media-index">05</span>
+                        <h3 data-i18n="models.item5">Konserve Adam (Riglenmiş)</h3>
+                        <p data-i18n="models.tag">3B Model</p>
+                    </div>
+                </article>
+
+                <article class="panel media-card">
+                    <div class="media-frame">
+                        <img src="images/Model6.png" alt="Ağaç">
+                    </div>
+                    <div class="media-copy">
+                        <span class="media-index">06</span>
+                        <h3 data-i18n="models.item6">Ağaç</h3>
+                        <p data-i18n="models.tag">3B Model</p>
+                    </div>
+                </article>
+
+                <article class="panel media-card">
+                    <div class="media-frame">
+                        <img src="images/Model7.png" alt="Asker Bereti">
+                    </div>
+                    <div class="media-copy">
+                        <span class="media-index">07</span>
+                        <h3 data-i18n="models.item7">Asker Bereti</h3>
+                        <p data-i18n="models.tag">3B Model</p>
+                    </div>
+                </article>
+
+                <article class="panel media-card">
+                    <div class="media-frame">
+                        <img src="images/Model8.png" alt="Çalı">
+                    </div>
+                    <div class="media-copy">
+                        <span class="media-index">08</span>
+                        <h3 data-i18n="models.item8">Çalı</h3>
+                        <p data-i18n="models.tag">3B Model</p>
+                    </div>
+                </article>
+
+                <article class="panel media-card">
+                    <div class="media-frame">
+                        <img src="images/Model9.png" alt="Mekanik Kasa">
+                    </div>
+                    <div class="media-copy">
+                        <span class="media-index">09</span>
+                        <h3 data-i18n="models.item9">Mekanik Kasa</h3>
+                        <p data-i18n="models.tag">3B Model</p>
+                    </div>
+                </article>
+
+                <article class="panel media-card">
+                    <div class="media-frame">
+                        <img src="images/Model10.png" alt="Gözetleme Kulesi">
+                    </div>
+                    <div class="media-copy">
+                        <span class="media-index">10</span>
+                        <h3 data-i18n="models.item10">Gözetleme Kulesi</h3>
+                        <p data-i18n="models.tag">3B Model</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="section content-section">
+            <div class="container section-head">
+                <p class="eyebrow" data-i18n="projects.kicker">03 / PROJELER</p>
+                <h2 data-i18n="projects.title">Projelerim</h2>
+                <p class="section-subtitle" data-i18n="projects.subtitle">Basaban, ekiple geliştirdiğim 3B bir puzzle oyunu.</p>
+            </div>
+
+            <div class="container">
+                <article class="panel project-card">
+                    <div class="project-visual media-frame project-frame">
+                        <img src="images/basaban-logo.png" alt="Basaban logo">
+                    </div>
+
+                    <div class="project-copy">
+                        <span class="project-tag" data-i18n="projects.featured">Öne Çıkan Proje</span>
+                        <h3>Basaban</h3>
+                        <p data-i18n="projects.description">
+                            Ekibimle geliştirdiğim 3B bir puzzle oyunu. Android için yayınlandı ve yapboz hissini sade ama karakterli bir sunumla taşıyor.
+                        </p>
+
+                        <div class="tag-row">
+                            <span class="tag" data-i18n="projects.platform">Platform: Android</span>
+                            <span class="tag" data-i18n="projects.genre">Tür: 3B Puzzle</span>
+                        </div>
+
+                        <a href="https://play.google.com/store/apps/details?id=com.Order66Studios.Basaban&hl=tr" target="_blank" rel="noreferrer" class="button primary" data-i18n="projects.button">Play Store'da Gör</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="section content-section">
+            <div class="container section-head">
+                <p class="eyebrow" data-i18n="contact.kicker">04 / İLETİŞİM</p>
+                <h2 data-i18n="contact.title">İletişim</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Sormak, görüşmek ya da birlikte üretmek için ulaşabilirsin.</p>
+            </div>
+
+            <div class="container contact-grid">
+                <a class="panel contact-card" href="mailto:ensarkarayay0758@gmail.com">
+                    <span class="contact-label" data-i18n="contact.email">E-posta</span>
+                    <strong>ensarkarayay0758@gmail.com</strong>
+                </a>
+
+                <a class="panel contact-card" href="https://x.com/Dark__0758" target="_blank" rel="noreferrer">
+                    <span class="contact-label" data-i18n="contact.twitter">Twitter</span>
+                    <strong>Dark__0758</strong>
+                </a>
+
+                <a class="panel contact-card" href="https://www.instagram.com/ensarkryy_/" target="_blank" rel="noreferrer">
+                    <span class="contact-label" data-i18n="contact.instagram">Instagram</span>
+                    <strong>ensarkryy_</strong>
+                </a>
+
+                <a class="panel contact-card" href="https://github.com/DarkB0w" target="_blank" rel="noreferrer">
+                    <span class="contact-label" data-i18n="contact.github">GitHub</span>
+                    <strong>DarkB0w</strong>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 Ensar (DarkB0w). <span data-i18n="footer.copy">Tüm hakları saklıdır.</span></p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
