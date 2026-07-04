@@ -321,11 +321,11 @@ button {
 .hero-copy h1 {
     margin-top: 10px;
     font-family: var(--font-body);
-    font-size: clamp(2rem, 4.3vw, 3.5rem);
+    font-size: clamp(1.7rem, 3.2vw, 2.7rem);
     font-weight: 700;
-    line-height: 1.06;
+    line-height: 1;
     letter-spacing: -0.03em;
-    max-width: 16ch;
+    max-width: 20ch;
 }
 
 .lead {
@@ -743,7 +743,7 @@ body.has-lightbox-open {
     }
 
     .hero-copy h1 {
-        max-width: 14ch;
+        max-width: 18ch;
     }
 }
 
@@ -843,7 +843,7 @@ body.has-lightbox-open {
     }
 
     .hero-copy h1 {
-        font-size: clamp(1.9rem, 8vw, 2.55rem);
+        font-size: clamp(1.9rem, 8vw, 2.45rem);
         max-width: none;
     }
 
