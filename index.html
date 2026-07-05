@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="tr" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ensar (DarkB0w) | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=VT323&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Reference Starfield Background -->
+    <canvas id="starfield"></canvas>
+
     <header class="site-header">
         <div class="container header-inner">
             <a class="brand" href="#home" aria-label="Ensar DarkB0w">
@@ -37,20 +43,22 @@
     <main>
         <section id="home" class="section hero-section">
             <div class="container hero-grid">
-                <div class="panel hero-copy">
-                    <p class="eyebrow" data-i18n="hero.kicker">PORTFOLYO / SEÇİLİ ÇALIŞMALAR</p>
-                    <h1 data-i18n="hero.title">Ensar (DarkB0w) - 3B/2B Modelleyici</h1>
-                    <p class="lead" data-i18n="hero.copy">
-                        Merhaba! Ben Ensar, modelleme ve yazılım tutkunu bir geliştiriciyim. Hem 3B hem 2B alanda çalışmayı, kod yazmayı ve yeni projeler geliştirmeyi seviyorum.
+                <div class="panel hero-copy reveal-up">
+                    <p class="eyebrow subtitle" data-i18n="hero.kicker">PORTFOLYO / SEÇİLİ ÇALIŞMALAR</p>
+                    <h1 class="title" data-i18n="hero.title">Ensar (DarkB0w) - <span class="highlight">3B/2B
+                            Modelleyici</span></h1>
+                    <p class="lead tagline" data-i18n="hero.copy">
+                        Merhaba! Ben Ensar, modelleme ve yazılım tutkunu bir geliştiriciyim. Hem 3B hem 2B alanda
+                        çalışmayı, kod yazmayı ve yeni projeler geliştirmeyi seviyorum.
                     </p>
 
-                    <div class="button-row">
+                    <div class="button-row action-fade">
                         <a class="button primary" href="#projects" data-i18n="hero.primary">Projeleri İncele</a>
                         <a class="button secondary" href="#contact" data-i18n="hero.secondary">İletişime Geç</a>
                     </div>
                 </div>
 
-                <aside class="panel status-panel">
+                <aside class="panel status-panel reveal-up">
                     <div class="status-card">
                         <span data-i18n="status.focusLabel">Odak</span>
                         <strong data-i18n="status.focusValue">Yazılım + 3B</strong>
@@ -80,7 +88,10 @@
             <div class="container">
                 <article class="panel text-panel">
                     <p data-i18n="about.copy">
-                        Merhaba! Ben Ensar, modelleme ve yazılım tutkunu bir geliştiriciyim. Hem 3B hem 2B alanda çalışmayı, kod yazmayı ve yeni projeler geliştirmeyi seviyorum.
+                        Kod yazmanın mantıksal düzeniyle, 3B modellemenin sınırsız yaratıcılığını bir araya getirmek
+                        benim için en büyük tutku. Her iki disiplinde de sürekli yeni şeyler öğrenmekten, teknik
+                        becerilerimi sanatla birleştirerek yaşayan dünyalar ve projeler tasarlamaktan büyük keyif
+                        alıyorum.
                     </p>
                 </article>
             </div>
@@ -90,10 +101,11 @@
             <div class="container section-head">
                 <p class="eyebrow" data-i18n="models.kicker">02 / MODELLER</p>
                 <h2 data-i18n="models.title">Modellerim</h2>
-                <p class="section-subtitle" data-i18n="models.subtitle">3B çalışmalarımı mekanik bir panel düzeniyle sergiliyorum.</p>
+                <p class="section-subtitle" data-i18n="models.subtitle">3B çalışmalarımı mekanik bir panel düzeniyle
+                    sergiliyorum.</p>
             </div>
 
-            <div class="container card-grid models-grid">
+            <div class="container card-grid models-grid reveal-up">
                 <article class="panel media-card">
                     <div class="media-frame">
                         <img src="images/Model1.png" alt="Savaş Baltası">
@@ -126,83 +138,10 @@
                         <p data-i18n="models.tag">3B Model</p>
                     </div>
                 </article>
+            </div>
 
-                <article class="panel media-card">
-                    <div class="media-frame">
-                        <img src="images/Model4.png" alt="Shuriken Şapka">
-                    </div>
-                    <div class="media-copy">
-                        <span class="media-index">04</span>
-                        <h3 data-i18n="models.item4">Shuriken Şapka</h3>
-                        <p data-i18n="models.tag">3B Model</p>
-                    </div>
-                </article>
-
-                <article class="panel media-card">
-                    <div class="media-frame">
-                        <img src="images/Model5.png" alt="Konserve Adam">
-                    </div>
-                    <div class="media-copy">
-                        <span class="media-index">05</span>
-                        <h3 data-i18n="models.item5">Konserve Adam (Riglenmiş)</h3>
-                        <p data-i18n="models.tag">3B Model</p>
-                    </div>
-                </article>
-
-                <article class="panel media-card">
-                    <div class="media-frame">
-                        <img src="images/Model6.png" alt="Ağaç">
-                    </div>
-                    <div class="media-copy">
-                        <span class="media-index">06</span>
-                        <h3 data-i18n="models.item6">Ağaç</h3>
-                        <p data-i18n="models.tag">3B Model</p>
-                    </div>
-                </article>
-
-                <article class="panel media-card">
-                    <div class="media-frame">
-                        <img src="images/Model7.png" alt="Asker Bereti">
-                    </div>
-                    <div class="media-copy">
-                        <span class="media-index">07</span>
-                        <h3 data-i18n="models.item7">Asker Bereti</h3>
-                        <p data-i18n="models.tag">3B Model</p>
-                    </div>
-                </article>
-
-                <article class="panel media-card">
-                    <div class="media-frame">
-                        <img src="images/Model8.png" alt="Çalı">
-                    </div>
-                    <div class="media-copy">
-                        <span class="media-index">08</span>
-                        <h3 data-i18n="models.item8">Çalı</h3>
-                        <p data-i18n="models.tag">3B Model</p>
-                    </div>
-                </article>
-
-                <article class="panel media-card">
-                    <div class="media-frame">
-                        <img src="images/Model9.png" alt="Mekanik Kasa">
-                    </div>
-                    <div class="media-copy">
-                        <span class="media-index">09</span>
-                        <h3 data-i18n="models.item9">Mekanik Kasa</h3>
-                        <p data-i18n="models.tag">3B Model</p>
-                    </div>
-                </article>
-
-                <article class="panel media-card">
-                    <div class="media-frame">
-                        <img src="images/Model10.png" alt="Gözetleme Kulesi">
-                    </div>
-                    <div class="media-copy">
-                        <span class="media-index">10</span>
-                        <h3 data-i18n="models.item10">Gözetleme Kulesi</h3>
-                        <p data-i18n="models.tag">3B Model</p>
-                    </div>
-                </article>
+            <div class="container models-show-more">
+                <button class="button primary" id="show-more-models-btn" data-i18n="models.showMore">Daha Fazla</button>
             </div>
         </section>
 
@@ -210,10 +149,11 @@
             <div class="container section-head">
                 <p class="eyebrow" data-i18n="projects.kicker">03 / PROJELER</p>
                 <h2 data-i18n="projects.title">Projelerim</h2>
-                <p class="section-subtitle" data-i18n="projects.subtitle">Basaban, ekiple geliştirdiğim 3B bir puzzle oyunu.</p>
+                <p class="section-subtitle" data-i18n="projects.subtitle">Basaban, ekiple geliştirdiğim 3B bir puzzle
+                    oyunu.</p>
             </div>
 
-            <div class="container">
+            <div class="container reveal-up">
                 <article class="panel project-card">
                     <div class="project-visual media-frame project-frame">
                         <img src="images/basaban-logo.png" alt="Basaban logo">
@@ -223,7 +163,8 @@
                         <span class="project-tag" data-i18n="projects.featured">Öne Çıkan Proje</span>
                         <h3>Basaban</h3>
                         <p data-i18n="projects.description">
-                            Ekibimle geliştirdiğim 3B bir puzzle oyunu. Android için yayınlandı ve yapboz hissini sade ama karakterli bir sunumla taşıyor.
+                            Ekibimle geliştirdiğim 3B bir puzzle oyunu. Android için yayınlandı ve yapboz hissini sade
+                            ama karakterli bir sunumla taşıyor.
                         </p>
 
                         <div class="tag-row">
@@ -231,7 +172,9 @@
                             <span class="tag" data-i18n="projects.genre">Tür: 3B Puzzle</span>
                         </div>
 
-                        <a href="https://play.google.com/store/apps/details?id=com.Order66Studios.Basaban&hl=tr" target="_blank" rel="noreferrer" class="button primary" data-i18n="projects.button">Play Store'da Gör</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.Order66Studios.Basaban&hl=tr"
+                            target="_blank" rel="noreferrer" class="button primary" data-i18n="projects.button">Play
+                            Store'da Gör</a>
                     </div>
                 </article>
             </div>
@@ -241,32 +184,170 @@
             <div class="container section-head">
                 <p class="eyebrow" data-i18n="contact.kicker">04 / İLETİŞİM</p>
                 <h2 data-i18n="contact.title">İletişim</h2>
-                <p class="section-subtitle" data-i18n="contact.subtitle">Sormak, görüşmek ya da birlikte üretmek için ulaşabilirsin.</p>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Sormak, görüşmek ya da birlikte üretmek için
+                    ulaşabilirsin.</p>
             </div>
 
-            <div class="container contact-grid">
-                <a class="panel contact-card" href="mailto:ensarkarayay0758@gmail.com">
-                    <span class="contact-label" data-i18n="contact.email">E-posta</span>
-                    <strong>ensarkarayay0758@gmail.com</strong>
+            <div class="container social-links-row reveal-up">
+                <a class="social-circle" href="mailto:ensarkarayay0758@gmail.com" aria-label="E-posta" title="E-posta">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
                 </a>
 
-                <a class="panel contact-card" href="https://x.com/Dark__0758" target="_blank" rel="noreferrer">
-                    <span class="contact-label" data-i18n="contact.twitter">Twitter</span>
-                    <strong>Dark__0758</strong>
+                <a class="social-circle" href="https://www.linkedin.com/in/ensar-karayay-73a8a62a5/" target="_blank"
+                    rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
                 </a>
 
-                <a class="panel contact-card" href="https://www.instagram.com/ensarkryy_/" target="_blank" rel="noreferrer">
-                    <span class="contact-label" data-i18n="contact.instagram">Instagram</span>
-                    <strong>ensarkryy_</strong>
+                <a class="social-circle" href="https://www.instagram.com/ensarkryy_/" target="_blank" rel="noreferrer"
+                    aria-label="Instagram" title="Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
                 </a>
 
-                <a class="panel contact-card" href="https://github.com/DarkB0w" target="_blank" rel="noreferrer">
-                    <span class="contact-label" data-i18n="contact.github">GitHub</span>
-                    <strong>DarkB0w</strong>
+                <a class="social-circle" href="https://github.com/DarkB0w" target="_blank" rel="noreferrer"
+                    aria-label="GitHub" title="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
                 </a>
             </div>
         </section>
     </main>
+
+    <!-- All Models Modal -->
+    <div class="all-models-modal" id="all-models-modal" aria-hidden="true">
+        <div class="all-models-modal-content">
+            <div class="all-models-modal-header">
+                <h2 data-i18n="models.allModels">Tüm Modellerim</h2>
+                <button class="all-models-modal-close" id="close-all-models-btn" aria-label="Kapat">&times;</button>
+            </div>
+            <div class="all-models-modal-body">
+                <div class="card-grid models-grid">
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model1.png" alt="Savaş Baltası"></div>
+                        <div class="media-copy"><span class="media-index">01</span>
+                            <h3 data-i18n="models.item1">Savaş Baltası</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model2.png" alt="Fötr Şapka"></div>
+                        <div class="media-copy"><span class="media-index">02</span>
+                            <h3 data-i18n="models.item2">Fötr Şapka</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model3.png" alt="İlk Model"></div>
+                        <div class="media-copy"><span class="media-index">03</span>
+                            <h3 data-i18n="models.item3">İlk Model</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model4.png" alt="Shuriken Şapka"></div>
+                        <div class="media-copy"><span class="media-index">04</span>
+                            <h3 data-i18n="models.item4">Shuriken Şapka</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model5.png" alt="Konserve Adam"></div>
+                        <div class="media-copy"><span class="media-index">05</span>
+                            <h3 data-i18n="models.item5">Konserve Adam (Riglenmiş)</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model6.png" alt="Ağaç"></div>
+                        <div class="media-copy"><span class="media-index">06</span>
+                            <h3 data-i18n="models.item6">Ağaç</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model7.png" alt="Asker Bereti"></div>
+                        <div class="media-copy"><span class="media-index">07</span>
+                            <h3 data-i18n="models.item7">Asker Bereti</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model8.png" alt="Çalı"></div>
+                        <div class="media-copy"><span class="media-index">08</span>
+                            <h3 data-i18n="models.item8">Çalı</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model9.png" alt="Mekanik Kasa"></div>
+                        <div class="media-copy"><span class="media-index">09</span>
+                            <h3 data-i18n="models.item9">Mekanik Kasa</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model10.png" alt="Gözetleme Kulesi"></div>
+                        <div class="media-copy"><span class="media-index">10</span>
+                            <h3 data-i18n="models.item10">Gözetleme Kulesi</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model11.png" alt="Model 11"></div>
+                        <div class="media-copy"><span class="media-index">11</span>
+                            <h3>Model 11</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model12.png" alt="Model 12"></div>
+                        <div class="media-copy"><span class="media-index">12</span>
+                            <h3>Model 12</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model13.png" alt="Model 13"></div>
+                        <div class="media-copy"><span class="media-index">13</span>
+                            <h3>Model 13</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model14.png" alt="Model 14"></div>
+                        <div class="media-copy"><span class="media-index">14</span>
+                            <h3>Model 14</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                    <article class="panel media-card">
+                        <div class="media-frame"><img src="images/Model15.png" alt="Model 15"></div>
+                        <div class="media-copy"><span class="media-index">15</span>
+                            <h3>Model 15</h3>
+                            <p data-i18n="models.tag">3B Model</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="container footer-inner">
@@ -274,6 +355,8 @@
         </div>
     </footer>
 
+    <script src="particles.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

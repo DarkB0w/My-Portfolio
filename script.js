@@ -22,10 +22,12 @@ const translations = {
         'status.langLabel': 'Dil',
         'about.kicker': '01 / HAKKIMDA',
         'about.title': 'Hakkımda',
-        'about.copy': 'Merhaba! Ben Ensar, modelleme ve yazılım tutkunu bir geliştiriciyim. Hem 3B hem 2B alanda çalışmayı, kod yazmayı ve yeni projeler geliştirmeyi seviyorum.',
+        'about.copy': 'Kod yazmanın mantıksal düzeniyle, 3B modellemenin sınırsız yaratıcılığını bir araya getirmek benim için en büyük tutku. Her iki disiplinde de sürekli yeni şeyler öğrenmekten, teknik becerilerimi sanatla birleştirerek yaşayan dünyalar ve projeler tasarlamaktan büyük keyif alıyorum.',
         'models.kicker': '02 / MODELLER',
         'models.title': 'Modellerim',
         'models.subtitle': '3B çalışmalarımı mekanik bir panel düzeniyle sergiliyorum.',
+        'models.allModels': 'Tüm Modellerim',
+        'models.showMore': 'Daha Fazla',
         'models.tag': '3B Model',
         'models.item1': 'Savaş Baltası',
         'models.item2': 'Fötr Şapka',
@@ -50,6 +52,7 @@ const translations = {
         'contact.subtitle': 'Sormak, görüşmek ya da birlikte üretmek için ulaşabilirsin.',
         'contact.email': 'E-posta',
         'contact.twitter': 'X',
+        'contact.linkedin': 'LinkedIn',
         'contact.instagram': 'Instagram',
         'contact.github': 'GitHub',
         'footer.copy': 'Tüm hakları saklıdır.',
@@ -79,10 +82,12 @@ const translations = {
         'status.langLabel': 'Language',
         'about.kicker': '01 / ABOUT',
         'about.title': 'About Me',
-        'about.copy': 'Hi! I am Ensar, a developer passionate about modeling and software. I enjoy working in both 3D and 2D, writing code, and building new projects.',
+        'about.copy': 'Combining the logical order of programming with the boundless creativity of 3D modeling is my greatest passion. In both disciplines, I thoroughly enjoy continuously learning new things and uniting my technical skills with art to design living worlds and projects.',
         'models.kicker': '02 / MODELS',
         'models.title': 'My Models',
         'models.subtitle': 'I present my 3D work through a mechanical panel layout.',
+        'models.allModels': 'All My Models',
+        'models.showMore': 'Show More',
         'models.tag': '3D Model',
         'models.item1': 'War Axe',
         'models.item2': 'Fedora Hat',
@@ -107,6 +112,7 @@ const translations = {
         'contact.subtitle': 'Reach out if you want to ask, talk, or build something together.',
         'contact.email': 'Email',
         'contact.twitter': 'X',
+        'contact.linkedin': 'LinkedIn',
         'contact.instagram': 'Instagram',
         'contact.github': 'GitHub',
         'footer.copy': 'All rights reserved.',
@@ -120,7 +126,10 @@ const langToggle = document.getElementById('lang-toggle');
 const statusPanel = document.querySelector('.status-panel');
 const navLinks = Array.from(document.querySelectorAll('.nav-link'));
 const sections = Array.from(document.querySelectorAll('section[id]'));
-const modelImages = Array.from(document.querySelectorAll('.models-grid .media-frame img'));
+
+// For lightbox we query ALL media frame images including modern modal
+const getModelImages = () => Array.from(document.querySelectorAll('.models-grid .media-frame img'));
+let modelImages = getModelImages();
 let lightboxElements = null;
 const themeIcon = {
     dark: `
@@ -215,6 +224,19 @@ function initSectionTracking() {
     });
 
     sections.forEach((section) => observer.observe(section));
+
+    // Scroll Reveal Observer
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Optional: unobserve if we only want it to reveal once
+                // revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
 }
 
 function initAnchorScrolling() {
@@ -303,6 +325,7 @@ function ensureLightbox() {
 }
 
 function initModelLightbox() {
+    modelImages = getModelImages();
     if (!modelImages.length) {
         return;
     }
@@ -311,10 +334,11 @@ function initModelLightbox() {
 
     modelImages.forEach((image) => {
         const frame = image.closest('.media-frame');
-        if (!frame) {
+        if (!frame || frame.dataset.boundLightbox) {
             return;
         }
 
+        frame.dataset.boundLightbox = 'true';
         frame.classList.add('is-zoomable');
         frame.setAttribute('role', 'button');
         frame.setAttribute('tabindex', '0');
@@ -352,6 +376,42 @@ function applyStickyStatusPanel() {
     }
 }
 
+function initCustomCursor() {
+    // Create cursor elements
+    const cursorDot = document.createElement('div');
+    cursorDot.className = 'custom-cursor-dot';
+
+    const cursorGlow = document.createElement('div');
+    cursorGlow.className = 'custom-cursor-glow';
+
+    document.body.appendChild(cursorDot);
+    document.body.appendChild(cursorGlow);
+
+    // Track mouse movement
+    document.addEventListener('mousemove', (e) => {
+        const { clientX: x, clientY: y } = e;
+
+        // Dot moves instantly
+        cursorDot.style.left = `${x}px`;
+        cursorDot.style.top = `${y}px`;
+
+        // Glow moves with slight delay
+        cursorGlow.style.left = `${x}px`;
+        cursorGlow.style.top = `${y}px`;
+    });
+
+    // Hover effect on interactive elements
+    const interactables = document.querySelectorAll('a, button, .is-zoomable, .social-circle, .nav-link');
+    interactables.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            document.body.classList.add('cursor-hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            document.body.classList.remove('cursor-hover');
+        });
+    });
+}
+
 function initControls() {
     themeToggle.addEventListener('click', () => {
         const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
@@ -370,11 +430,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
     applyTheme(initialTheme);
     applyLanguage(initialLanguage);
-    applyStickyStatusPanel();
     initControls();
     initAnchorScrolling();
     initSectionTracking();
     initModelLightbox();
+    initCustomCursor();
+    init3DTiltEffect();
+
+    // Setup Modal Logic
+    const showMoreBtn = document.getElementById('show-more-models-btn');
+    const allModelsModal = document.getElementById('all-models-modal');
+    const closeAllModelsBtn = document.getElementById('close-all-models-btn');
+
+    if (showMoreBtn && allModelsModal && closeAllModelsBtn) {
+        showMoreBtn.addEventListener('click', () => {
+            allModelsModal.classList.add('is-open');
+            allModelsModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('has-lightbox-open'); // reuse overflow hidden
+            initModelLightbox(); // re-bind just in case
+        });
+
+        closeAllModelsBtn.addEventListener('click', () => {
+            allModelsModal.classList.remove('is-open');
+            allModelsModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('has-lightbox-open');
+        });
+
+        // Close modal on escape
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && allModelsModal.classList.contains('is-open') && (!lightboxElements || !lightboxElements.overlay.classList.contains('is-open'))) {
+                allModelsModal.classList.remove('is-open');
+                allModelsModal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('has-lightbox-open');
+            }
+        });
+
+        // Close modal on outside click
+        allModelsModal.addEventListener('click', (event) => {
+            if (event.target === allModelsModal) {
+                allModelsModal.classList.remove('is-open');
+                allModelsModal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('has-lightbox-open');
+            }
+        });
+    }
 });
 
-window.addEventListener('resize', applyStickyStatusPanel);
+function init3DTiltEffect() {
+    const tiltElements = document.querySelectorAll('.media-card, .project-card');
+
+    tiltElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            el.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease';
+        });
+
+        el.addEventListener('mousemove', (e) => {
+            if (window.matchMedia("(pointer: coarse)").matches) return;
+
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = ((y - centerY) / centerY) * -4;
+            const rotateY = ((x - centerX) / centerX) * 4;
+
+            el.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+            el.style.zIndex = '10';
+
+            const shadowX = (centerX - x) / 20;
+            const shadowY = (centerY - y) / 20;
+            el.style.boxShadow = `${shadowX}px ${shadowY}px 25px color-mix(in srgb, var(--accent) 20%, transparent)`;
+        });
+
+        el.addEventListener('mouseleave', () => {
+            el.style.transition = 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.8s ease';
+            el.style.transform = 'perspective(1200px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            el.style.zIndex = '1';
+            el.style.boxShadow = '';
+        });
+    });
+}
+
+
